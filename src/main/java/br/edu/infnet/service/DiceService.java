@@ -10,7 +10,7 @@ public class DiceService {
 		int i = 1;
 		int result = 0;
 		int randomicNumber = 0;
-		
+
 		Random random = new Random();
 
 		while(i <= amount) {

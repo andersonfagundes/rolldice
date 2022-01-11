@@ -17,11 +17,11 @@ public class DiceController {
 	DiceService diceService;
 
 	@GetMapping("/start")
-	ResponseEntity<String> hello(@RequestParam(name = "type") Integer face,
+	ResponseEntity<String> rollDices(@RequestParam(name = "type") Integer face,
 								 @RequestParam(name = "amount") Integer amount) {
 
 		Integer result = diceService.rollDices(face, amount);
 
-		return new ResponseEntity<>("{'value':"+result+"}", HttpStatus.OK);
+		return new ResponseEntity<>("{value:"+result+"}", HttpStatus.OK);
 	}
 }
