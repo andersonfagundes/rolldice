@@ -9,11 +9,16 @@ public class DiceService {
 	public Integer rollDices(Integer face, Integer amount) {
 		int i = 1;
 		int result = 0;
+		int randomicNumber = 0;
 		
+		Random random = new Random();
+
 		while(i <= amount) {
-			Random random = new Random();
-			if(random.nextInt(face) == 0) continue;
-			result += random.nextInt(face+1);
+			randomicNumber = random.nextInt(face + 1);
+			if(randomicNumber == 0) {
+				continue;
+			}
+			result += randomicNumber;
 			i++;
 		}
 		
