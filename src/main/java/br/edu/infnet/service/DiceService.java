@@ -1,12 +1,23 @@
 package br.edu.infnet.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Random;
 import org.springframework.stereotype.Service;
-
-import br.edu.infnet.repository.DiceRepository;
 
 @Service
 public class DiceService {
-	@Autowired
-	private DiceRepository rollDiceRepository;
+
+	public Integer rollDices(Integer face, Integer amount) {
+		int i = 1;
+		int result = 0;
+		
+		while(i <= amount) {
+			Random random = new Random();
+			if(random.nextInt(face) == 0) continue;
+			result += random.nextInt(face+1);
+			i++;
+		}
+		
+		return result;
+	}
+	
 }

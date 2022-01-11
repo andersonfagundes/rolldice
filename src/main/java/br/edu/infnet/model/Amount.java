@@ -8,18 +8,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 @Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="amount")
 public class Amount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private int value;
+	private Integer value;
+	
 	@ManyToOne
-	@JoinColumn(name = "idDice")
+	@JsonIgnore
+	@JoinColumn(name = "dice_id")
 	private Dice dice;
 
 }
