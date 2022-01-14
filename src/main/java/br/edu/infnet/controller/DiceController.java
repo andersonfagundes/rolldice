@@ -30,10 +30,22 @@ public class DiceController {
 		return new ResponseEntity<>("{value:"+result+"}", HttpStatus.OK);
 	}*/
 
-	@GetMapping(value = "/iniciativa", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Map<String, Object>> rollDices(@RequestParam(name = "type") Integer face,
-														 @RequestParam(name = "amount") Integer amount) {
+//	@GetMapping(value = "/iniciativa", produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<Map<String, Object>> rollDices(@RequestParam(name = "type") Integer face,
+//														 @RequestParam(name = "amount") Integer amount) {
+//
+//		Integer result = diceService.rollDices(face, amount);
+//
+//		Map<String, Object> payload = new HashMap<>();
+//		payload.put("value", result);
+//
+//		return ResponseEntity.ok(payload);
+//	}
 
+	@GetMapping(value = "/iniciativa", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Map<String, Object>> getResultIniciativa() {
+		Integer face = 10;
+		Integer amount = 1;
 		Integer result = diceService.rollDices(face, amount);
 
 		Map<String, Object> payload = new HashMap<>();
