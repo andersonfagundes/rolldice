@@ -30,4 +30,7 @@ public class Dice {
 	@OneToMany(mappedBy = "dice")
 	private List<Amount> amounts;
 
+	@OneToMany(mappedBy = "dice")
+	private List<Start> starts;
+
 }
