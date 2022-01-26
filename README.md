@@ -14,3 +14,7 @@ type = tipo do dado, se é um dado de 4 faces, 6 faces, 10 faces, etc
 amount = a quantidade de vezes que o dado deverá ser lancado
 
 É necessário que os serviços configServer e eurekaServer estejam iniciados antes deste servço.
+
+Para acessar a documentação criada pelo swagger, é necessário digitar o seguinte endereço após inicializar o projeto:
+http://localhost:62683/swagger-ui/index.html
+Obs: a porta deverá ser trocada para a porta em que o projeto inicializado, pois a porta usada é aleatória
